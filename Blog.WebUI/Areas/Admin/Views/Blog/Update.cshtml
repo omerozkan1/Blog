@@ -1,0 +1,39 @@
+﻿@model BlogUpdateViewModel
+
+<form method="post" asp-action="Update" class="p-3" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="@Model.Id" />
+
+    <div class="form-group">
+        <label asp-for="Title">Başlık</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ShortDescription">Kısa Açıklama</label>
+        <textarea asp-for="ShortDescription" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Açıklama</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Resim Seçiniz</label>
+        <input class="form-control-file" type="file" asp-for="Image" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-block btn-info">Kaydet</button>
+    </div>
+
+
+</form>
+
+@section Css{
+    <link href="~/Trumbowyg/dist/ui/trumbowyg.min.css" rel="stylesheet" />
+}
+
+@section JavaScript{
+    <script src="~/Trumbowyg/dist/trumbowyg.min.js"></script>
+    <script>
+        $("#Description").trumbowyg();
+    </script>
+}
