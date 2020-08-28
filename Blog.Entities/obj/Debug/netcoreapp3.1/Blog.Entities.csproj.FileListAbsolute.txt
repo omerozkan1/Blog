@@ -15,4 +15,3 @@ C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.Entities\obj\Debug\netcoreap
 C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.Entities\obj\Debug\netcoreapp3.1\Blog.Entities.AssemblyInfo.cs
 C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.Entities\obj\Debug\netcoreapp3.1\Blog.Entities.dll
 C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.Entities\obj\Debug\netcoreapp3.1\Blog.Entities.pdb
-C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.Entities\obj\Debug\netcoreapp3.1\Blog.Entities.csprojAssemblyReference.cache

@@ -125,4 +125,3 @@ C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\obj\Debug\netcoreapp3.
 C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\AssignCategory.cshtml.g.cs
 C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Search\Default.cshtml.g.cs
 C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\LastFiveBlog\Default.cshtml.g.cs
-C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\obj\Debug\netcoreapp3.1\Blog.WebUI.csprojAssemblyReference.cache

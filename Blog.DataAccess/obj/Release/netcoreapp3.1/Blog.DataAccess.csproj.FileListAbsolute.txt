@@ -1,0 +1,15 @@
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\bin\Release\netcoreapp3.1\Blog.DataAccess.deps.json
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\bin\Release\netcoreapp3.1\Blog.DataAccess.runtimeconfig.json
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\bin\Release\netcoreapp3.1\Blog.DataAccess.runtimeconfig.dev.json
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\bin\Release\netcoreapp3.1\Blog.DataAccess.dll
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\bin\Release\netcoreapp3.1\Blog.DataAccess.pdb
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\bin\Release\netcoreapp3.1\Blog.Entities.dll
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\bin\Release\netcoreapp3.1\Blog.Entities.pdb
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\obj\Release\netcoreapp3.1\Blog.DataAccess.csprojAssemblyReference.cache
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\obj\Release\netcoreapp3.1\Blog.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\obj\Release\netcoreapp3.1\Blog.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\obj\Release\netcoreapp3.1\Blog.DataAccess.AssemblyInfo.cs
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\obj\Release\netcoreapp3.1\Blog.DataAccess.csproj.CopyComplete
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\obj\Release\netcoreapp3.1\Blog.DataAccess.dll
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\obj\Release\netcoreapp3.1\Blog.DataAccess.pdb
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DataAccess\obj\Release\netcoreapp3.1\Blog.DataAccess.genruntimeconfig.cache

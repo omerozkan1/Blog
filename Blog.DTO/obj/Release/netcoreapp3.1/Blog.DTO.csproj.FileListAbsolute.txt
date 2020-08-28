@@ -1,0 +1,12 @@
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\bin\Release\netcoreapp3.1\Blog.DTO.deps.json
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\bin\Release\netcoreapp3.1\Blog.DTO.dll
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\bin\Release\netcoreapp3.1\Blog.DTO.pdb
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\bin\Release\netcoreapp3.1\Blog.Entities.dll
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\bin\Release\netcoreapp3.1\Blog.Entities.pdb
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\obj\Release\netcoreapp3.1\Blog.DTO.csprojAssemblyReference.cache
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\obj\Release\netcoreapp3.1\Blog.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\obj\Release\netcoreapp3.1\Blog.DTO.AssemblyInfoInputs.cache
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\obj\Release\netcoreapp3.1\Blog.DTO.AssemblyInfo.cs
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\obj\Release\netcoreapp3.1\Blog.DTO.csproj.CopyComplete
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\obj\Release\netcoreapp3.1\Blog.DTO.dll
+C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.DTO\obj\Release\netcoreapp3.1\Blog.DTO.pdb

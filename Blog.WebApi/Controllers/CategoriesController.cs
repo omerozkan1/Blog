@@ -52,7 +52,12 @@ namespace Blog.WebApi.Controllers
         {
             if (id != categoryUpdateDto.Id)
                 return BadRequest("geçersiz id");
-            await _categoryService.UpdateAsync(_mapper.Map<Category>(categoryUpdateDto));
+
+            var updatedCategory = await _categoryService.FindByIdAsync(id);
+            updatedCategory.Id = categoryUpdateDto.Id;
+            updatedCategory.Name = categoryUpdateDto.Name;
+
+            await _categoryService.UpdateAsync(updatedCategory);
             return NoContent();
         }
 
