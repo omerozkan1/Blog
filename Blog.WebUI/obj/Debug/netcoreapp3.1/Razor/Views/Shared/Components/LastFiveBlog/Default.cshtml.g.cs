@@ -20,7 +20,7 @@ using Blog.WebUI.Enums;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3cdb168a5c559978de56decfa032d6fb45f4d596", @"/Views/Shared/Components/LastFiveBlog/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2a9f018607cccf7008b0e187b697fb5182aea26c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0165ab883ebda4a031cfcee4cab8d38315da2452", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_LastFiveBlog_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<BlogListViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "BlogDetail", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

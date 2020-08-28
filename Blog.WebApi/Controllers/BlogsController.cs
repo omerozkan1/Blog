@@ -38,19 +38,19 @@ namespace Blog.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            if (_facade.MemoryCache.TryGetValue("blogList",out List<BlogListDto> list))
-            {
-                return Ok(list);
-            }
+            //if (_facade.MemoryCache.TryGetValue("blogList",out List<BlogListDto> list))
+            //{
+            //    return Ok(list);
+            //}
 
             var blogList = _mapper.Map<List<BlogListDto>>(await _blogService.GetAllSortedByPostedTimeAsync());
 
-            _facade.MemoryCache.Set("blogList", blogList, new MemoryCacheEntryOptions()
+            //_facade.MemoryCache.Set("blogList", blogList, new MemoryCacheEntryOptions()
 
-            {
-                AbsoluteExpiration = DateTime.Now.AddDays(1), // ne kadar süre cachleneceği belirtilir.
-                Priority = CacheItemPriority.Normal // önbellek önceliğe göre boşaltılır.
-            });
+            //{
+            //    AbsoluteExpiration = DateTime.Now.AddDays(1), // ne kadar süre cachleneceği belirtilir.
+            //    Priority = CacheItemPriority.Normal // önbellek önceliğe göre boşaltılır.
+            //});
 
             return Ok(blogList);
         }

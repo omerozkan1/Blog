@@ -29,7 +29,8 @@ namespace Blog.WebUI.ApiServices.Concrate
             var responseMessage = await _httpClient.GetAsync("");
             if (responseMessage.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<List<BlogListViewModel>>(await responseMessage.Content.ReadAsStringAsync());
+                var blogList = JsonConvert.DeserializeObject<List<BlogListViewModel>>(await responseMessage.Content.ReadAsStringAsync());
+                return blogList;
             }
             return null;
         }
@@ -92,6 +93,7 @@ namespace Blog.WebUI.ApiServices.Concrate
             if (model.Image != null)
             {
                 //var bytes = await File.ReadAllBytesAsync(model.Image.FileName);
+
                 var stream = new MemoryStream();
                 await model.Image.CopyToAsync(stream);
                 var bytes = stream.ToArray();

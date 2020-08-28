@@ -20,7 +20,7 @@ using Blog.WebUI.Enums;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f9477b3dc933d3e19c11c8d4004e1dac48aba03e", @"/Views/Home/BlogDetail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2a9f018607cccf7008b0e187b697fb5182aea26c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0165ab883ebda4a031cfcee4cab8d38315da2452", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_BlogDetail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<BlogListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "post", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -45,6 +45,7 @@ using Blog.WebUI.Enums;
                 return __backed__tagHelperScopeManager;
             }
         }
+        private global::Blog.WebUI.TagHelpers.ImageTagHelper __Blog_WebUI_TagHelpers_ImageTagHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper;
         #pragma warning disable 1998
@@ -153,26 +154,36 @@ WriteAttributeValue("", 773, comment.Id, 773, 13, false);
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("</p>\r\n\r\n<hr>\r\n\r\n<!-- Preview Image -->\r\n<getblogimage");
-            BeginWriteAttribute("id", " id=\"", 1326, "\"", 1340, 1);
+            WriteLiteral("</p>\r\n\r\n<hr>\r\n\r\n<!-- Preview Image -->\r\n");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("getblogimage", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9477b3dc933d3e19c11c8d4004e1dac48aba03e7913", async() => {
+            }
+            );
+            __Blog_WebUI_TagHelpers_ImageTagHelper = CreateTagHelper<global::Blog.WebUI.TagHelpers.ImageTagHelper>();
+            __tagHelperExecutionContext.Add(__Blog_WebUI_TagHelpers_ImageTagHelper);
 #nullable restore
 #line 51 "C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\Views\Home\BlogDetail.cshtml"
-WriteAttributeValue("", 1331, Model.Id, 1331, 9, false);
+__Blog_WebUI_TagHelpers_ImageTagHelper.Id = Model.Id;
 
 #line default
 #line hidden
 #nullable disable
-            EndWriteAttribute();
-            BeginWriteAttribute("blog-image-type", " blog-image-type=\"", 1341, "\"", 1384, 1);
+            __tagHelperExecutionContext.AddTagHelperAttribute("id", __Blog_WebUI_TagHelpers_ImageTagHelper.Id, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
 #nullable restore
 #line 51 "C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\Views\Home\BlogDetail.cshtml"
-WriteAttributeValue("", 1359, BlogImageType.BlogDetail, 1359, 25, false);
+__Blog_WebUI_TagHelpers_ImageTagHelper.BlogImageType = BlogImageType.BlogDetail;
 
 #line default
 #line hidden
 #nullable disable
-            EndWriteAttribute();
-            WriteLiteral("></getblogimage>\r\n");
+            __tagHelperExecutionContext.AddTagHelperAttribute("blog-image-type", __Blog_WebUI_TagHelpers_ImageTagHelper.BlogImageType, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral("\r\n");
             WriteLiteral("\r\n<hr>\r\n\r\n<!-- Post Content -->\r\n");
 #nullable restore
 #line 57 "C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\Views\Home\BlogDetail.cshtml"
@@ -182,7 +193,7 @@ Write(Html.Raw(Model.Description));
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n<hr>\r\n\r\n<!-- Comments Form -->\r\n<div class=\"card my-4\">\r\n    <h5 class=\"card-header\">Yorum Yaz:</h5>\r\n    <div class=\"card-body\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9477b3dc933d3e19c11c8d4004e1dac48aba03e9047", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9477b3dc933d3e19c11c8d4004e1dac48aba03e10149", async() => {
                 WriteLiteral("\r\n            <input type=\"hidden\" name=\"BlogId\"");
                 BeginWriteAttribute("value", " value=\"", 1781, "\"", 1798, 1);
 #nullable restore

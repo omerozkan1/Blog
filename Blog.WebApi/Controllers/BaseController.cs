@@ -27,7 +27,7 @@ namespace Blog.WebApi.Controllers
                 else
                 {
                     var newName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/" + newName);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "Blog.WebApi/wwwroot/img/" + newName);
                     var stream = new FileStream(path, FileMode.Create);
                     await file.CopyToAsync(stream);
 

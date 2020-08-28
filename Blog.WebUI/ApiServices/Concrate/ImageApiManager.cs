@@ -24,10 +24,7 @@ namespace Blog.WebUI.ApiServices.Concrate
             var responseMessage = await _httpClient.GetAsync($"GetBlogImageById/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
-                //var bytes = await responseMessage.Content.ReadAsByteArrayAsync();
-                var stream = new MemoryStream();
-                await model.Image.CopyToAsync(stream);
-                var bytes = stream.ToArray();
+                var bytes = await responseMessage.Content.ReadAsByteArrayAsync();       
 
                 return $"data:image/jpeg;base64,{Convert.ToBase64String(bytes)}";
             }

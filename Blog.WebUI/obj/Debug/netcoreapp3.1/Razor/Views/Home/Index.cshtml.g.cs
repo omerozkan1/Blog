@@ -20,7 +20,7 @@ using Blog.WebUI.Enums;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aafaf681c7300a00aa8bf496e2d38fc6282df5d8", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2a9f018607cccf7008b0e187b697fb5182aea26c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0165ab883ebda4a031cfcee4cab8d38315da2452", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<BlogListViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "BlogDetail", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -45,6 +45,7 @@ using Blog.WebUI.Enums;
                 return __backed__tagHelperScopeManager;
             }
         }
+        private global::Blog.WebUI.TagHelpers.ImageTagHelper __Blog_WebUI_TagHelpers_ImageTagHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
@@ -108,17 +109,28 @@ Write(await Component.InvokeAsync("Search",new { @s=ViewBag.SearchString }));
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("    <div class=\"card mb-4\">\r\n        <getblogimage");
-            BeginWriteAttribute("id", " id=\"", 409, "\"", 422, 1);
+            WriteLiteral("    <div class=\"card mb-4\">\r\n        ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("getblogimage", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aafaf681c7300a00aa8bf496e2d38fc6282df5d85473", async() => {
+            }
+            );
+            __Blog_WebUI_TagHelpers_ImageTagHelper = CreateTagHelper<global::Blog.WebUI.TagHelpers.ImageTagHelper>();
+            __tagHelperExecutionContext.Add(__Blog_WebUI_TagHelpers_ImageTagHelper);
 #nullable restore
 #line 17 "C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\Views\Home\Index.cshtml"
-WriteAttributeValue("", 414, blog.Id, 414, 8, false);
+__Blog_WebUI_TagHelpers_ImageTagHelper.Id = blog.Id;
 
 #line default
 #line hidden
 #nullable disable
-            EndWriteAttribute();
-            WriteLiteral("></getblogimage>\r\n\r\n        <div class=\"card-body\">\r\n            <h2 class=\"card-title\">");
+            __tagHelperExecutionContext.AddTagHelperAttribute("id", __Blog_WebUI_TagHelpers_ImageTagHelper.Id, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral("\r\n\r\n        <div class=\"card-body\">\r\n            <h2 class=\"card-title\">");
 #nullable restore
 #line 20 "C:\Users\Ömer\Desktop\Ömer-MersusPC\WEB\Blog\Blog.WebUI\Views\Home\Index.cshtml"
                               Write(blog.Title);
@@ -135,7 +147,7 @@ WriteAttributeValue("", 414, blog.Id, 414, 8, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aafaf681c7300a00aa8bf496e2d38fc6282df5d86389", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aafaf681c7300a00aa8bf496e2d38fc6282df5d87398", async() => {
                 WriteLiteral("Read More &rarr;");
             }
             );
