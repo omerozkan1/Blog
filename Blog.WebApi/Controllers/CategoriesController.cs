@@ -2,10 +2,8 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Blog.Business.Interfaces;
-using Blog.Business.Tools.LogTool;
 using Blog.DTO.DTOs.CategoryDtos;
 using Blog.Entities.Concrete;
 using Blog.WebApi.CustomFilters;
@@ -18,10 +16,8 @@ namespace Blog.WebApi.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
-        private readonly ICustomLogger _customLogger;
-        public CategoriesController(IMapper mapper, ICategoryService categoryService, ICustomLogger customLogger)
+        public CategoriesController(IMapper mapper, ICategoryService categoryService)
         {
-            _customLogger = customLogger;
             _mapper = mapper;
             _categoryService = categoryService;
         }
@@ -31,12 +27,14 @@ namespace Blog.WebApi.Controllers
         {
             return Ok(_mapper.Map<List<CategoryListDto>>(await _categoryService.GetAllSortedByIdAsync()));
         }
+
         [HttpGet("{id}")]
         [ServiceFilter(typeof(ValidId<Category>))]
         public async Task<IActionResult> GetById(int id)
         {
             return Ok(_mapper.Map<CategoryListDto>(await _categoryService.FindByIdAsync(id)));
         }
+
         [HttpPost]
         [Authorize]
         [ValidModel]
@@ -45,6 +43,7 @@ namespace Blog.WebApi.Controllers
             await _categoryService.AddAsync(_mapper.Map<Category>(categoryAddDto));
             return Created("", categoryAddDto);
         }
+
         [HttpPut("{id}")]
         [Authorize]
         [ValidModel]
@@ -56,6 +55,7 @@ namespace Blog.WebApi.Controllers
             await _categoryService.UpdateAsync(_mapper.Map<Category>(categoryUpdateDto));
             return NoContent();
         }
+
         [HttpDelete("{id}")]
         [Authorize]
         [ServiceFilter(typeof(ValidId<Category>))]
@@ -86,13 +86,7 @@ namespace Blog.WebApi.Controllers
             return Ok(listCategory);
         }
 
-        [Route("/Error")]
-        public IActionResult Error()
-        {
-            var errorInfo= HttpContext.Features.Get<IExceptionHandlerPathFeature>();
-            _customLogger.LogError($"\nHatanın oluştuğu yer:{errorInfo.Path}\n Hata Mesajı : {errorInfo.Error.Message} \n Stack Trace: {errorInfo.Error.StackTrace}");
-            return Problem(detail: "bir hata olustu, en kisa zamanda fixlenecek");
-        }
+     
      
 
 

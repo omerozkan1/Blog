@@ -10,6 +10,7 @@ using System.Text;
 using Blog.Business.Containers.MicrosoftIoC;
 using Blog.Business.StringInfos;
 using Blog.WebApi.CustomFilters;
+using Microsoft.OpenApi.Models;
 
 namespace Blog.WebApi
 {
@@ -25,18 +26,54 @@ namespace Blog.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddCors(opt =>
+            //{
+            //    opt.AddPolicy("global", cors =>
+            //    {
+            //        cors.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            //    });    
+            //}); // projeyi dýþ dünyaya açmak için.
+
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("Blog", new OpenApiInfo
+                {
+                    Title = "Blog Api",
+                    Description = "Blog Api Document",
+                    Contact = new OpenApiContact 
+                    {
+                        Email = "omeerozkan52@gmail.com",
+                        Name = "Ömer Özkan"
+                    }
+                });
+
+                opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Name= "Authorization",
+                    Type=SecuritySchemeType.Http,
+                    Description="Bearer {token}"
+                });
+            });
+
+
+            services.Configure<JwtInfo>(Configuration.GetSection("JWTInfo")); // options pattern
+
+            var jwtInfo = Configuration.GetSection("JWTInfo").Get<JwtInfo>();
+
             services.AddAutoMapper(typeof(Startup));
-            services.AddDependencies();
+            services.AddDependencies(Configuration);
             services.AddScoped(typeof(ValidId<>));
+            services.AddMemoryCache();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
             {
                 opt.RequireHttpsMetadata = false;
                 opt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidIssuer = JwtInfo.Issuer,
-                    ValidAudience = JwtInfo.Audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtInfo.SecurityKey)),
+                    ValidIssuer = jwtInfo.Issuer,
+                    ValidAudience = jwtInfo.Audience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtInfo.SecurityKey)),
                     ValidateLifetime = true,
                     ValidateAudience = true,
                     ValidateIssuer = true,
@@ -58,12 +95,20 @@ namespace Blog.WebApi
             //    app.UseDeveloperExceptionPage();
             //}
 
-            app.UseExceptionHandler("/Error");
+            app.UseExceptionHandler("/api/Error");
 
             app.UseRouting();
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            //app.UseCors("global");
+
+            app.UseSwagger();
+            app.UseSwaggerUI(opt =>
+            {
+                opt.SwaggerEndpoint("/swagger/Blog/swagger.json", "Blog Api");
+            });
 
             app.UseEndpoints(endpoints =>
             {

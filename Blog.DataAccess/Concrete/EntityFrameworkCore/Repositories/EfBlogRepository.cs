@@ -10,10 +10,14 @@ namespace Blog.DataAccess.Concrete.EntityFrameworkCore.Repositories
 {
     public class EfBlogRepository : EfGenericRepository<Blog.Entities.Concrete.Blog>, IBlogDal
     {
+        private readonly UdemyBlogContext _context;
+        public EfBlogRepository(UdemyBlogContext context):base(context)
+        {
+            _context = context;
+        }
         public async Task<List<Blog.Entities.Concrete.Blog>> GetAllByCategoryIdAsync(int categoryId)
         {
-            using var context = new UdemyBlogContext();
-            return await context.Blogs.Join(context.CategoryBlogs, b => b.Id, cb => cb.BlogId, (blog, categoryBlog) => new
+            return await _context.Blogs.Join(_context.CategoryBlogs, b => b.Id, cb => cb.BlogId, (blog, categoryBlog) => new
             {
                 blog,
                 categoryBlog
@@ -34,8 +38,7 @@ namespace Blog.DataAccess.Concrete.EntityFrameworkCore.Repositories
 
         public async Task<List<Category>> GetCategoriesAsync(int blogId)
         {
-            using var context = new UdemyBlogContext();
-            return await context.Categories.Join(context.CategoryBlogs, c => c.Id, cb => cb.CategoryId, (category, categoryBlog) => new
+            return await _context.Categories.Join(_context.CategoryBlogs, c => c.Id, cb => cb.CategoryId, (category, categoryBlog) => new
             {
                 category,
                 categoryBlog
@@ -48,8 +51,7 @@ namespace Blog.DataAccess.Concrete.EntityFrameworkCore.Repositories
 
         public async Task<List<Blog.Entities.Concrete.Blog>> GetLastFiveAsync()
         {
-            using var context = new UdemyBlogContext();
-            return await context.Blogs.OrderByDescending(I => I.PostedTime).Take(5).ToListAsync();
+            return await _context.Blogs.OrderByDescending(I => I.PostedTime).Take(5).ToListAsync();
         }
     }
 }

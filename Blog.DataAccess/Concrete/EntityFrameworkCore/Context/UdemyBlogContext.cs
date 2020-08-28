@@ -1,14 +1,25 @@
 ﻿using Blog.DataAccess.Concrete.EntityFrameworkCore.Mapping;
 using Blog.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Blog.DataAccess.Concrete.EntityFrameworkCore.Context
 {
     public class UdemyBlogContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //private readonly IConfiguration _configuration;
+        //public UdemyBlogContext(IConfiguration configuration)
+        //{
+        //    _configuration = configuration;
+        //}
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(_configuration.GetConnectionString("db1"));
+        //}
+
+        public UdemyBlogContext(DbContextOptions<UdemyBlogContext> options):base(options)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-KVV1JMS; database=Blog; user id=ebauser; password=3235860;");
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -13,6 +13,9 @@ using Blog.Entities.Concrete;
 using Blog.WebApi.CustomFilters;
 using Blog.WebApi.Enums;
 using Blog.WebApi.Models;
+using Microsoft.Extensions.Caching.Memory;
+using System.Threading;
+using Blog.Business.Tools.FacadeTool;
 
 namespace Blog.WebApi.Controllers
 {
@@ -23,16 +26,33 @@ namespace Blog.WebApi.Controllers
         private readonly IBlogService _blogService;
         private readonly IMapper _mapper;
         private readonly ICommentService _commentService;
-        public BlogsController(IBlogService blogService, IMapper mapper, ICommentService commentService)
+        private readonly IFacade _facade;
+        public BlogsController(IBlogService blogService, IMapper mapper, ICommentService commentService, IFacade facade)
         {
+            _facade = facade;
             _commentService = commentService;
             _blogService = blogService;
             _mapper = mapper;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(_mapper.Map<List<BlogListDto>>(await _blogService.GetAllSortedByPostedTimeAsync()));
+            if (_facade.MemoryCache.TryGetValue("blogList",out List<BlogListDto> list))
+            {
+                return Ok(list);
+            }
+
+            var blogList = _mapper.Map<List<BlogListDto>>(await _blogService.GetAllSortedByPostedTimeAsync());
+
+            _facade.MemoryCache.Set("blogList", blogList, new MemoryCacheEntryOptions()
+
+            {
+                AbsoluteExpiration = DateTime.Now.AddDays(1), // ne kadar süre cachleneceği belirtilir.
+                Priority = CacheItemPriority.Normal // önbellek önceliğe göre boşaltılır.
+            });
+
+            return Ok(blogList);
         }
 
         [HttpGet("{id}")]
