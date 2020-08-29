@@ -19,6 +19,7 @@ namespace Blog.WebUI
             services.AddHttpClient<ICategoryApiService, CategoryApiManager>();
             services.AddHttpClient<IimageApiService, ImageApiManager>();
             services.AddHttpClient<IAuthApiService, AuthApiManager>();
+            services.AddHttpClient<INewsApiService, NewsApiManager>();
             services.AddControllersWithViews();
         }
 
